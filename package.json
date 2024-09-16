@@ -4,14 +4,13 @@
   "description": "This project is meant to be a kind of template to start working with Cucumber and Cypress",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open",
     "cypress:runner": "cypress open --e2e --browser chrome",
     "cypress:execution": "cypress run --spec cypress/e2e/features/*",
     "cypress:execution-tags": "cypress run --env tags=@regresion",
-    "cypress:execution-allure": "cypress run --env allure=true,tags=@regresion",
+    "cypress:execution-allure": "cypress run --env allure=true tags=@regresion",
     "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
     "allure:report": "allure generate allure-results --clean -o allure-report",
-    "allure:history": "mkdir -p allure-results/history && mv -f allure-report/history/* allure-results/history/ && rm -r allure-report || true"
+    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"
   },
   "keywords": [
     "cypress"

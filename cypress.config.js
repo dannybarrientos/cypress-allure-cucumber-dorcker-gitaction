@@ -30,7 +30,6 @@ module.exports = defineConfig({
       allureReuseAfterSpec: false,
       allureSkipAutomaticScreenshots: true,
       allureAddVideoOnPass: true,
-      allureResultsPath: "allure-results",
     },
   },
   reporter: 'junit',

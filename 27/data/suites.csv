@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Sep 16 16:24:35 GMT 2024","Mon Sep 16 16:24:37 GMT 2024","2099","","Automatización Front-end","","","","Verify negative values are displayed in red",""
+"passed","Mon Sep 16 16:24:37 GMT 2024","Mon Sep 16 16:24:39 GMT 2024","2123","","Automatización Front-end","","","","Verify that there are exactly 6 transactions in the expense table",""
+"passed","Mon Sep 16 16:24:34 GMT 2024","Mon Sep 16 16:24:35 GMT 2024","1616","","Automatización Front-end","","","","Verify positive values are displayed in green",""
+"passed","Mon Sep 16 16:24:31 GMT 2024","Mon Sep 16 16:24:32 GMT 2024","1338","","Automatización Front-end","","","","Verify the total balance is 350",""
+"passed","Mon Sep 16 16:24:32 GMT 2024","Mon Sep 16 16:24:34 GMT 2024","1416","","Automatización Front-end","","","","Verify the available credit is 17,800",""
+"passed","Mon Sep 16 16:24:29 GMT 2024","Mon Sep 16 16:24:31 GMT 2024","2207","","Automatización Front-end","","","","Success Login",""

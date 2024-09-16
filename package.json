@@ -13,7 +13,6 @@
     "allure:report": "allure generate allure-results --clean -o allure-report",
     "allure:history": "mkdir -p allure-results/history && mv -f allure-report/history/* allure-results/history/ && rm -r allure-report || true",
     "allure:report-history": "npm run allure:history && npm run allure:report",
-    "allure:verify": "if [ -d './allure-results' ]; then echo 'allure-results existe'; else echo 'allure-results no existe'; fi && if [ -d './allure-report' ]; then echo 'allure-report existe'; else echo 'allure-report no existe'; fi"
   },
   "keywords": [
     "cypress"

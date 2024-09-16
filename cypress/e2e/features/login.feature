@@ -5,12 +5,12 @@ Feature: Automatización Front-end
     Background:
         Given A web browser is at the  ACME login page
         When A user enters the username "testuser", the password "testpassword", and clicks on the login button
-    @succes
+    @succes @regresion
     Scenario: Success Login
         Then the url will contains the hackaton path
         Then the user into the financial overview page
 
-    @totalBalance
+    @totalBalance @regresion
     Scenario: Verify the total balance is 350
         When the user views the total balance
         Then the total balance should be "$350"
@@ -29,7 +29,7 @@ Feature: Automatización Front-end
     Scenario: Verify negative values are displayed in red
         When the user views the transactions
         Then all negative transaction amounts should be displayed in red
-    @numberOfTransactions
+    @numberOfTransactions @regresion
     Scenario: Verify that there are exactly 6 transactions in the expense table
         When the user views the transactions
         Then the transactions table should display exactly "6" rows in the body

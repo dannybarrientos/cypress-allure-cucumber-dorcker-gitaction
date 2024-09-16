@@ -1,4 +1,4 @@
-const menu =require ("../utils/IteractionsElement");
+import { clickElement, elementIsVisible} from"../utils/IteractionsElement";
 class FinancialPage {
 
 
@@ -21,12 +21,12 @@ getDashboardTitle() {
 }
 
 checkAdsAreDisplayed() {
-cy.elementIsVisible( this.elements.firstSaleAd);
-cy.elementIsVisible( this.elements.secondSaleAd);
+elementIsVisible( this.elements.firstSaleAd);
+elementIsVisible( this.elements.secondSaleAd);
 }
 
 orderTransactionsByAmount() {
-    cy.clickElement( this.elements.amountTableHeader);
+    clickElement( this.elements.amountTableHeader);
 }
 
 checkIfTransactionsAreOrdered() {
@@ -46,11 +46,11 @@ checkChartIsDisplayed() {
 }
 
 compareExpenses() {
-    cy.clickElement( this.elements.compareExpensesLink);
+    clickElement( this.elements.compareExpensesLink);
 }
 
 showDataForNextYear(){
-    cy.clickElement( this.elements.dataForNextYearLink);
+    clickElement( this.elements.dataForNextYearLink);
 }
 
 }

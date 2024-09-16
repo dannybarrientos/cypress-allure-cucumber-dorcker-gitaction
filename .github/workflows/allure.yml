@@ -8,12 +8,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      
       - name: Cypress run with Cucumber
-        uses: cypress-io/github-action@v4.2.0 # use the explicit version number
+        uses: cypress-io/github-action@v4.2.0
         with:
           command: npm run cypress:execution-allure
+
+      - name: Verificar si allure-results se ha generado
+        run: |
+          if [ -d "./allure-results" ]; then
+            echo "Directorio allure-results existe."
+          else
+            echo "Directorio allure-results no existe."
+            exit 1
+          fi
+
       - name: Get Allure history
         uses: actions/checkout@v2
         if: always()
@@ -21,12 +30,17 @@ jobs:
         with:
           ref: allure
           path: allure
+
+      - name: Crear directorio allure-results/history
+        run: mkdir -p allure-results/history
+
       - name: Generate Allure Report
-        uses: simple-elf/allure-report-action@v1.9
+        uses: simple-elf/allure-report-action@1.9
         if: always()
         with:
           allure_results: allure-results
           gh_pages: allure
+
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3

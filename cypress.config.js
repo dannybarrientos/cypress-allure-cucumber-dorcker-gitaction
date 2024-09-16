@@ -27,7 +27,7 @@ module.exports = defineConfig({
     baseUrl: "https://demo.applitools.com/hackathonV2.html",
     chromeWebSecurity: false,
     env: {
-      allureReuseAfterSpec: false,
+      allureReuseAfterSpec: true,
       allureSkipAutomaticScreenshots: true,
       allureAddVideoOnPass: true,
     },

@@ -3,7 +3,7 @@
 
 > Cypress 10 + with Cucumber
 
-### 💻 Topics
+### 💻 Topic
 
 Integrated with:
 

@@ -8,7 +8,7 @@
     "cypress:runner": "cypress open --e2e --browser chrome",
     "cypress:execution": "cypress run --spec cypress/e2e/features/*",
     "cypress:execution-tags": "cypress run --env tags=@numberOfTransactions",
-    "cypress:execution-allure": "cypress run --env allure=true tags=@succes",
+    "cypress:execution-allure": "cypress run --env allure=true tags=@regresion",
     "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
     "allure:report": "allure generate allure-results --clean -o allure-report",
     "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"

@@ -25,7 +25,7 @@ module.exports = defineConfig({
     setupNodeEvents,
     specPattern: "cypress/e2e/features/*.feature",
     baseUrl: "https://demo.applitools.com/hackathonV2.html",
-    chromeWebSecurity: true,
+    chromeWebSecurity: false,
     env: {
       allureReuseAfterSpec: false,
       allureSkipAutomaticScreenshots: true,

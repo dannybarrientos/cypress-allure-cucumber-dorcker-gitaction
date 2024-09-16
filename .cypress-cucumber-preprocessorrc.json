@@ -1,0 +1,23 @@
+{
+  "json": {
+    "enabled": false,
+    "output": "jsonlogs/log.json",
+    "formatter": "cucumber-json-formatter"
+  },
+  "messages": {
+    "enabled": false,
+    "output": "jsonlogs/messages.ndjson"
+  },
+  "html": {
+    "enabled": true,
+    "output": "./cypress/reports/index.html"
+  },
+  "stepDefinitions": [
+    "[filepath]/**/*.{js,ts}",
+    "[filepath].{js,ts}",
+    "cypress/e2e/step_definitions/*.{js,ts}",
+    "[filepath]\\***.{js,ts}",
+    "[filepath].{js,ts}",
+    "cypress\\e2e\\step_definitions\\*.{js,ts}"
+  ]
+}

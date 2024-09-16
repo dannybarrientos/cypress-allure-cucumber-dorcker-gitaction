@@ -13,8 +13,6 @@ Integrated with:
 - [x] https://github.com/cucumber/json-formatter
 - [x] https://github.com/Shelex/cypress-allure-plugin
 
-(+ bundlers: https://github.com/badeball/cypress-cucumber-preprocessor/tree/master/examples)
-
 - ## 💻 Pre-requisites
 
 1. Node JS

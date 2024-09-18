@@ -1,47 +1,48 @@
 Feature: API Automation Testing for Users
 
-Background:
-  Given I have the base URL "https://reqres.in/api"
+Scenario: Get list of users
+  Given the API is available
+  When I request the first page of users
+  Then I should receive a 200 status code for users
+  And the response should contain a list of users
+
+Scenario: Get single user details
+  Given the API is available
+  When I request user with ID 2
+  Then I should receive a 200 status code for user
+  And the response should contain the user's details
 
 Scenario: Create a new user
-  Given I send a POST request to "/users" with the following data:
-    | name        | Test User           |
-    | job         | Automation Engineer |
-  Then the response code should be 201
-  And the response should contain the following data:
-    | name        | Test User           |
-    | job         | Automation Engineer |
-  And I save the user ID for future use
+  Given the API is available
+  When I submit a request to create a new user with name "John Doe" and job "Software Developer"
+  Then I should receive a 201 status code
+  And the response should contain the user's ID
 
-Scenario: Get user details by ID
-  When I send a GET request to "/users/{id}"
-  Then the response code should be 200
-  And the response should contain the user data:
-    | name        | Test User           |
-    | job         | Automation Engineer |
-
-Scenario: Update existing user
-  Given I have a user ID
-  When I send a PUT request to "/users" with the following data:
-    | name        | Updated User        |
-    | job         | Senior Engineer     |
-  Then the response code should be 200
-  And the response should contain the updated user data:
-    | name        | Updated User        |
-    | job         | Senior Engineer     |
+Scenario: Update an existing user
+  Given the API is available
+  When I submit a request to update user with ID 2 with name "Jane Doe" and job "Software Engineer"
+  Then I should receive a 200 status code for user update
+  And the response should contain the updated user's details
 
 Scenario: Delete an existing user
-  Given I have a user ID
-  When I send a DELETE request to "/users/{id}"
-  Then the response code should be 204
+  Given the API is available
+  When I submit a request to delete user with ID 2
+  Then I should receive a 204 status code for user deletion
 
-Scenario: Verify deleted user no longer exists
-  Given I have a deleted user ID
-  When I send a GET request to "/users/{id}"
-  Then the response code should be 404
+Scenario: Register a new user
+  Given the API is available
+  When I submit a request to register a new user with email "eve.holt@reqres.in" and password "pistol"
+  Then I should receive a 200 status code for user registration
+  And the response should contain the user ID and token
 
-Scenario: Create user with invalid data
-  Given I send a POST request to "/users" with the following data:
-    | name        |                      |
-    | job         |                      |
-  Then the response code should be 201
+Scenario: Login a user
+  Given the API is available
+  When I submit a request to login a user with email "eve.holt@reqres.in" and password "cityslicka"
+  Then I should receive a 200 status code for user login
+  And the response should contain the user token
+
+Scenario: Login unsuccessful
+  Given the API is available
+  When I submit a request to login a user with email "eve.holt@reqres.in" and no password
+  Then I should receive a 400 status code for user login
+  And the response should contain an error message

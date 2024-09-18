@@ -1,0 +1,35 @@
+{
+  "usersPage": {
+    "page": 1,
+    "expectedStatusCode": 200
+  },
+  "singleUser": {
+    "userId": 2,
+    "expectedStatusCode": 200
+  },
+  "newUser": {
+    "name": "John Doe",
+    "job": "Software Developer",
+    "expectedStatusCode": 201
+  },
+  "updateUser": {
+    "userId": 2,
+    "name": "Jane Doe",
+    "job": "Software Engineer",
+    "expectedStatusCode": 200
+  },
+  "deleteUser": {
+    "userId": 2,
+    "expectedStatusCode": 204
+  },
+  "registerUser": {
+    "email": "eve.holt@reqres.in",
+    "password": "pistol",
+    "expectedStatusCode": 200
+  },
+  "loginUser": {
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka",
+    "expectedStatusCode": 200
+  }
+}
